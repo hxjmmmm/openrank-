@@ -1,0 +1,4 @@
+复赛 filter=lfs diff=lfs merge=lfs -text
+README.md filter=lfs diff=lfs merge=lfs -text
+image.png filter=lfs diff=lfs merge=lfs -text
+初赛 filter=lfs diff=lfs merge=lfs -text

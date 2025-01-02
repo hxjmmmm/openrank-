@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.testdemo.mapper.KddMapper">
+
+
+    <select id="nodeList" resultType="com.testdemo.pojo.node">
+        SELECT
+            DISTINCT n.*
+        FROM
+            link l
+                JOIN
+            node n
+            ON
+                n.id = l.source OR n.id = l.target
+        WHERE
+            l.repo_name =#{pojoname} limit 200;
+    </select>
+    <select id="linkList" resultType="com.testdemo.pojo.link">
+        select source,target from link where repo_name=#{pojoname}
+    </select>
+    <select id="linksList" resultType="com.testdemo.pojo.links">
+        select source,target from link where repo_name=#{pojoname}
+    </select>
+</mapper>
